@@ -14,10 +14,10 @@ depends on `react` and `@types/react`, but if you're developing a react app you 
 
 ```js
 import { useState } from "react";
-// import { model } from "senko-model";
+// import { model } from "senko-model"; NO SENKO MODEL
 
 function TrashReactComponent() {
-    const [trashState, setTrashState] = useState();
+    const [trashState, setTrashState] = useState("TRASH LLLLLLLLLLLLL");
 
     // TRASH TRASH EW GROSS LLLLLLLLLL
     return (
@@ -43,7 +43,7 @@ function GOATReactComponent() {
     // LOOK AT THE S*X APPEAL OF THIS TWO-WAY BINDING
     // NO GROSS REACT
     return (
-        <input {...model(State, setTrashState)} />
+        <input {...model(goatState, setGoatState)} />
     );
 }
 ```
