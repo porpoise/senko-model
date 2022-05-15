@@ -1,0 +1,23 @@
+{
+  "name": "senko-model",
+  "version": "1.0.0",
+  "description": "two-way binding abstraction for react.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/porpoise/senko-model.git"
+  },
+  "author": "Raghav Misra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/porpoise/senko-model/issues"
+  },
+  "homepage": "https://github.com/porpoise/senko-model#readme",
+  "peerDependencies": {
+    "@types/react": "^18.0.9"
+  }
+}
