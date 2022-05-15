@@ -1,4 +1,4 @@
-function model(getter, setter, prop="value") {
+function model(getter, setter, prop) {
     const modelObj = Object.create(null);
     modelObj[prop] = getter;
     modelObj.onChange = function (event) {

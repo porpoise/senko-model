@@ -35,13 +35,21 @@ function TrashReactComponent() {
 
 don't yell at me that this breaks the standards of react development, react is literally all about messing with standards (see: `class`**`Name`**, **`html`**`For`, `onChange` vs `onInput`, JSX in its entirety)
 
-```js
-import { useState, createElement as trashCreateElement } from "react";
-import { factory as modelFactory } from "senko-model";
+this will automatically bind to `value` for `input` and `textarea`, to `checked` for `input[type=checkbox]` and to `innerText` for anything else
 
-// use this, modified, factory function for JSX
+in some file somewhere:
+```js
+import { createElement as trashCreateElement } from "react";
+import { factory } from "senko-model";
+
+// use this modified factory function for JSX
 // can be configured in tsconfig/babelrc/etc
-const createElement = modelFactory(trashCreateElement);
+export const createElement = factory(trashCreateElement);
+```
+
+in your component:
+```js
+import { useState } from "react";
 
 function GOATReactComponent() {
     const [goatState, setGoatState] = useState("goat");
@@ -58,6 +66,8 @@ function GOATReactComponent() {
 
 if overriding `createElement` really bothers you <3
 
+the downside of this is that it won't automatically bind to the correct property, you'll have to specify it yourself
+
 ```js
 import { useState } from "react";
 import { model } from "senko-model";
@@ -65,10 +75,9 @@ import { model } from "senko-model";
 function GOATReactComponent() {
     const [goatState, setGoatState] = useState("goat");
 
-    // LOOK AT THE S*X APPEAL OF THIS TWO-WAY BINDING
     // NO GROSS REACT
     return (
-        <input {...model(goatState, setGoatState)} />
+        <input {...model(goatState, setGoatState, "value")} />
     );
 }
 ```
