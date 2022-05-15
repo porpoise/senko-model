@@ -7,3 +7,5 @@ export function model(
 ): {
     onChange(e: React.ChangeEvent): void;
 };
+
+export function factory(trash: typeof React.createElement): typeof React.createElement;

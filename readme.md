@@ -33,6 +33,31 @@ function TrashReactComponent() {
 
 **420/69** dermatologists recommend `senko-model`.
 
+don't yell at me that this breaks the standards of react development, react is literally all about messing with standards (see: `class`**`Name`**, **`html`**`For`, `onChange` vs `onInput`, JSX in its entirety)
+
+```js
+import { useState, createElement as trashCreateElement } from "react";
+import { factory as modelFactory } from "senko-model";
+
+// use this, modified, factory function for JSX
+// can be configured in tsconfig/babelrc/etc
+const createElement = modelFactory(trashCreateElement);
+
+function GOATReactComponent() {
+    const [goatState, setGoatState] = useState("goat");
+
+    // LOOK AT THE S*X APPEAL OF THIS TWO-WAY BINDING
+    // NO GROSS REACT
+    return (
+        <input model={[goatState, setGoatState]} />
+    );
+}
+```
+
+## alternate, doesn't override `createElement`
+
+if overriding `createElement` really bothers you <3
+
 ```js
 import { useState } from "react";
 import { model } from "senko-model";
